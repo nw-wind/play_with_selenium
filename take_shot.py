@@ -37,5 +37,9 @@ except TimeoutException:
     print(f"Не накликал за {delay} секунд.")
 driver.save_screenshot("screenshot1.png")
 print("Заскриншотил 1.")
+res = driver.find_elements(By.XPATH, '//*[@id="search-result"]/li[*]/div/div[2]/div/a')
+for r in res:
+    e = r.get_attribute("href")
+    print(f"Ссылка: {e}")
 driver.quit()
 print("Кончил.")
