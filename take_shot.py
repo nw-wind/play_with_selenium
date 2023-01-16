@@ -23,9 +23,9 @@ try:
     print(f"Страница {url} загружена.")
 except TimeoutException:
     print(f"Не удалось загрузить {url} за {delay} секунд.")
+driver.find_element(By.NAME, 'text').send_keys('жопа стряслась')
 driver.save_screenshot("screenshot0.png")
 print("Заскриншотил 0.")
-driver.find_element(By.NAME, 'text').send_keys('жопа стряслась')
 submit = driver.find_element(By.XPATH, '/html/body/main/div[2]/form/div[2]/button')
 print("Написал и нашёл, куда жать.")
 submit.click()
